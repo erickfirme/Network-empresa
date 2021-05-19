@@ -1,0 +1,113 @@
+body 
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url(bg-predio.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.cadastro-cliente
+{
+    width: 300px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    background: #fff;
+    padding: 20px;
+    margin: 8% auto 0;
+    text-align: center;
+}
+
+.cadastro-cliente h1
+{
+color: #1c8adb;
+margin-bottom: 30px;
+}
+
+.input-box
+{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 90%;
+    border: solid 1px #999;
+    outline: none;
+}
+
+button 
+{
+color: #fff;
+width: 100%;
+padding: 10px;
+border-radius: 20px;
+font-size: 15px;
+margin: 10px 0;
+border: none;
+outline: none;
+cursor: pointer;
+}
+
+.cadastro-btn
+{
+    background-color: #1c8adb;
+}
+
+.gmail-btn
+{
+    background-color: #1c8adb;
+}
+
+a
+{
+    text-decoration: none;
+    color:white;
+    font-size: 15px;
+}
+#entre{
+    font-size: 15px;
+    color:black;
+}
+
+#blog {
+    pointer-events: visible;
+}
+
+hr
+{
+    margin-top: 20px;
+    width: 80%;
+}
+
+.or 
+{
+    background: #fff;
+    width: 30px;
+    margin: -19px auto 10px;
+}
+
+img {
+    width: 70px;
+
+}
+
+#log {
+    display: inline-block;
+    font-weight: 400;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding-left: 500px;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    display: inline-block;
+    margin-left: 700px;
+    font-weight: 400;
+    text-align: center;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+}
+
+#vce {
+}

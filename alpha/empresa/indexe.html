@@ -1,0 +1,69 @@
+<!-- adicionar cidade e estado -->
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<style>
+		body{
+			background-image: url(net2.jpg);
+			background-repeat: no-repeat;
+			background-size: 100%;
+			}	
+		p {font-size: 20px; font-family: bahnschrift;color:rgb(68, 51, 51); }
+		h1{font-family: bahnschrift; color:rgb(68, 51, 51); }
+		input{font-size: 20px;}
+</style>
+</head>
+<body>
+	<form name="f" >
+		<h1>EMPRES&Lambda;S </h1>
+		<p>Empresa: <input type="text" name="empresa" value="" size=35"><br><br></p>		
+		<p>Cidade: <input type="text" name="cidade" value="" size=35"> <br><br></p>	
+		<p>Ramo: <input type="text" name="ramo" value="" size=35"><br><br></p>
+		<!--<p>Entre com estado: <input type="text" name="estado" value="" size=35"><br><br></p>-->
+
+		<input type="hidden" name="acao" value="">	
+		<input type="button" value="cadastro" onClick="document.f.acao.value='cadastro';chamarWebService();">
+		<input type="button" value="consulta" onClick="document.f.acao.value='consulta';chamarWebService();">
+		<input type="button" value="alteração" onClick="document.f.acao.value='alteracao';chamarWebService();">
+		<input type="button" value="exclusão" onClick="document.f.acao.value='exclusao';chamarWebService();">
+	</form>
+</body>	
+
+<script>
+	function chamarWebService(){  
+        // define dados a serem enviados para o webservice
+		var dados = {
+			empresa	: document.f.empresa.value,
+			cidade	: document.f.cidade.value,
+			ramo  : document.f.ramo.value,
+			acao	: document.f.acao.value //identifica ação a ser realizada pelo webservice
+		};
+	   // informa início da chamada a execução do webservice		
+	   alert('Webservice vai ser executado');    
+       $.ajax({
+				url: 'crud.php',// script a ser chamado
+				type: 'POST',// Método de envio				
+				dataType: 'json',// Tipo de retorno
+				data:dados
+				
+		})
+		// observação: usa-se vírgula acima
+		// .done é executado quando serviço termina, retornando informações na variável data
+		.done(function(data)
+		{   
+			alert('Webservice retorna dados JSON');    			
+			// percorre json data
+			for(var i in data){
+				alert(data[i].resultado);//mostra informação retornada
+			}
+			// fim da execução do webservice
+			alert('Webservice finalizado');    
+		});   
+}
+</script>
+</html>
